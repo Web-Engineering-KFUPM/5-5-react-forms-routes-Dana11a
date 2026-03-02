@@ -53,15 +53,26 @@ export default function Registration() {
           )}
         </div>
         <div className="form-row">
-        <label htmlFor="password">Password</label>
-          <input
-            id="password"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          {errors.password && <p className="error">{errors.password}</p>}
-        </div>
+  <label htmlFor="password">Password</label>
+
+  <input
+    id="password"
+    type="password"
+    value={password}
+    onChange={(e) => {
+      const value = e.target.value;
+      setPassword(value);
+
+      // realtime validation (same behavior as email)
+      setErrors((prev) => ({
+        ...prev,
+        password: value.trim() ? "" : "Password is required",
+      }));
+    }}
+  />
+
+  {errors.password && <p className="error">{errors.password}</p>}
+</div>
 
 
         <fieldset className="form-row">
