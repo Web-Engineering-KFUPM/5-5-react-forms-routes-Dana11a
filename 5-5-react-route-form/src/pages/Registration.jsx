@@ -2,7 +2,6 @@ import { useState } from "react";
 
 export default function Registration() {
   const [email, setEmail] = useState("");
-
   const [errors, setErrors] = useState({});
 
   const handleSubmit = (e) => {

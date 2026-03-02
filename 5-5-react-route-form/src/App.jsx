@@ -144,19 +144,28 @@
 // - Use the hints above to guide your implementation, but write the actual JSX and logic yourself.
 // ================================================================
 
-
+import { Routes, Route, NavLink } from "react-router-dom";
+import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
+import Registration from "./pages/Registration.jsx";
 export default function App() {
   return (
     <div className="app">
       <nav className="navbar">
         <div className="brand">🧑‍💻 Student Portal</div>
         <div className="links">
-          {/*Nav links*/}
+        <NavLink to="/" end>Home</NavLink>
+        <NavLink to="/about">About</NavLink>
+        <NavLink to="/registration">Registration</NavLink>
         </div>
       </nav>
 
       <main className="container">
-        {/*Routes*/}
+        <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/registration" element={<Registration />} />
+      </Routes>
       </main>
 
       <footer className="footer">
