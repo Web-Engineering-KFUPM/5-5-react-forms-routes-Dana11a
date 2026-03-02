@@ -63,7 +63,6 @@ export default function Registration() {
       const value = e.target.value;
       setPassword(value);
 
-      // realtime validation (same behavior as email)
       setErrors((prev) => ({
         ...prev,
         password: value.trim() ? "" : "Password is required",
