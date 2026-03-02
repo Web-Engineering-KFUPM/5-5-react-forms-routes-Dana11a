@@ -148,6 +148,7 @@ import { Routes, Route, NavLink } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Registration from "./pages/Registration.jsx";
+
 export default function App() {
   return (
     <div className="app">
@@ -165,6 +166,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/registration" element={<Registration />} />
+        <Route path="*" element={<h2>404 — Page Not Found</h2>} />
       </Routes>
       </main>
 
